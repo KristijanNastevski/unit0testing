@@ -64,4 +64,12 @@ public class TimePeriodTest {
         TimePeriod timePeriodB = new TimePeriod(dateStartB, dateEndB);
         Assert.assertTrue(timePeriodA.overlapsWith(timePeriodB));
     }
+
+    @Test
+    public void testAnotOverlapsWithB() throws Exception {
+        Date dateStartB = new Date (2015 / 10 / 10);
+        Date dateEndB = new Date (2015 / 11 / 11);
+        TimePeriod timePeriodB = new TimePeriod(dateStartB, dateEndB);
+        Assert.assertFalse(timePeriodA.overlapsWith(timePeriodB));
+    }
 }
